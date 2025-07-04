@@ -2,8 +2,8 @@
   "productos": [
     {
       "id": "1",
-      "nombre": "lapto",
-      "precio": 800,
+      "nombre": "laptop",
+      "precio": 900,
       "is_estado": true,
       "venta": true,
       "debaja": false
