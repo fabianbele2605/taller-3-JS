@@ -4,12 +4,35 @@
         <title></title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./stylos.css">
     </head>
     <body>
-        <h2>agergar productos</h2>
-        <div id="form-error" class="error"></div>
-        <input type="text" id="nombre" placeholder="Nombre" required>
-        <input type="text" id="precio" placeholder="Precio" required>
-        <button onclick="handleAddProduct()">Agregar</button>
+        <div class="form-container">
+            <h2>agergar productos</h2>
+            <div id="form-error" class="error"></div>
+            <input type="text" id="nombre" placeholder="Nombre" required>
+            <input type="text" id="precio" placeholder="Precio" required>
+            <button onclick="handleAddProduct()">Agregar Productos</button>
+        </div>
+
+        <div class="button-container">
+            <button onclick="obtenerProductosDisponibles()">Productos Disponibles</button>
+        </div>
+
+        <h2>Productos Disponibles</h2>
+        <table id="productos-table">
+            <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>Nombre</td>
+                    <td>Precio</td>
+                    <td>Venta</td>
+                    <td>Accion</td>
+                </tr>
+            </thead>
+            <tbody id="productos-table-body"></tbody>
+        </table>
+        
+        <script src="./gestion_apis.js"></script>
     </body>
 </html>

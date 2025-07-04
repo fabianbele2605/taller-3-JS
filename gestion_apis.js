@@ -48,7 +48,29 @@ async function eliminarProducto(id) {
     }
 }
 
-// fucnion para actualizar productos
+// funcion para vender productos
+
+async function ventaProducto(id) {
+    try {
+        const response = await fetch(`http://localhost:3000/productos/${id}`, {
+            method: 'PATCH',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify({ is_estado: false, vendido: true })
+        });
+
+        if(!response.ok) {
+            throw new Error('Todavia no se ah vendido el producto');
+        }
+
+        alert('Producto Vendido!');
+        obtenerProductosDisponibles();
+    } catch (error) {
+        console.error('Error al vender el producto:', error);
+        alert('Error al vender el producto');
+    }
+}
+
+// funcion para actualizar productos
 
 async function actualizarProducto(id) {
     try {
@@ -56,9 +78,21 @@ async function actualizarProducto(id) {
             method: 'PUT',
             headers: { 'content-type': 'application/json'},
             body: JSON.stringify({ is_estado: true, update: true})
-        })
+        });
+
+        if(!response.ok) {
+            throw new Error('Todavia no se ah actualizado el producto');
+        }
+
+        alert('Producto Actualizado!');
+        obtenerProductosDisponibles();
+    } catch (error) {
+        console.error('Error al eliminar el producto', error);
+        alert('Error al eliminar el producto')
     }
 }
+
+// funcion 
 
 // funcion de obtener los productos
 
@@ -71,7 +105,7 @@ async function obtenerProductosDisponibles() {
 
         const productosDisponibles = await response.json();
 
-        const tableBody = document.getElementById('producto-table-body');
+        const tableBody = document.getElementById('productos-table-body');
         tableBody.innerHTML = '';
 
         productosDisponibles.forEach(producto => {
@@ -81,9 +115,9 @@ async function obtenerProductosDisponibles() {
                 <td>${producto.nombre}</td>
                 <td>${producto.precio}</td>
                 <td>
-                    <button onclick="eliminarProducto">Eliminar</button>
-                    <button></button>
-                    <button></button>
+                    <button onclick="eliminarProducto(${producto.id})">Eliminar</button>
+                    <button onclick="ventaProducto(${producto.id})">Vender</button>
+                    <button onclick="actualizarProducto(${producto.id})">Actualizar</button>
                 </td>
                 `;
                 tableBody.appendChild(row);
@@ -93,10 +127,10 @@ async function obtenerProductosDisponibles() {
     }
 }
 
-// funcion para agregar los prodcutos al formulario
+// funcion para agregar los productos al formulario
 
 async function handleAddProduct() {
-    document.getElementById('form-error').textContent = '',
+    document.getElementById('form-error').textContent = '';
 
     const nombre = document.getElementById('nombre').value.trim();
     const precio = parseInt(document.getElementById('precio').value);

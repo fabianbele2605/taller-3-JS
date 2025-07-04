@@ -1,0 +1,74 @@
+body {
+    background-color: azure;
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+.form-container {
+    margin-bottom: 20px;
+}
+
+.form-container input {
+    margin: 5px;
+    padding: 5px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.error {
+    color: red;
+}
+
+.button-container {
+    margin: 10px 0;
+}
+
+button {
+    margin-right: 5px;
+    padding: 5px 10px;
+}
+
+header {
+    height: 40px;
+    justify-content: center;
+    font-size: 26px;
+    line-height: 30px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+ul {
+    display: contents;
+    justify-content: space-between;
+}
+
+li {
+    display: contents;
+    justify-content: center;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    padding: 0px;
+    gap: 10px;
+}
+
+.logo img {
+    width: 150px;
+    height: auto;
+}
