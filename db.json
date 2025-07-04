@@ -2,21 +2,60 @@
   "productos": [
     {
       "id": "1",
-      "nombre": "laptop",
-      "precio": 1500,
-      "is_estado": true
+      "nombre": "lapto",
+      "precio": 800,
+      "is_estado": true,
+      "venta": true,
+      "debaja": false
     },
     {
       "id": "2",
       "nombre": "Xbox one",
-      "precio": 1000,
-      "is_estado": true
+      "precio": 500,
+      "is_estado": true,
+      "venta": true,
+      "debaja": false
     },
     {
       "id": "3",
       "nombre": "Televisor",
+      "precio": 800,
+      "is_estado": true,
+      "venta": false,
+      "debaja": false
+    },
+    {
+      "id": "4",
+      "nombre": "juaco",
+      "precio": 15464,
+      "is_estado": false,
+      "debaja": true
+    },
+    {
+      "id": "5",
+      "nombre": "Playstation 4",
       "precio": 1200,
       "is_estado": true
+    },
+    {
+      "id": "6",
+      "nombre": "Balon",
+      "precio": 100,
+      "is_estado": true
+    },
+    {
+      "id": "7",
+      "nombre": "gkaglñ",
+      "precio": 465,
+      "is_estado": true,
+      "venta": true
+    },
+    {
+      "id": "8",
+      "nombre": "jajaj",
+      "precio": 45646,
+      "is_estado": true,
+      "venta": true
     }
   ]
 }

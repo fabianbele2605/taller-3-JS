@@ -5,14 +5,33 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="./stylos.css">
+        <style>
+        .form-container, .update-container { margin: 20px; }
+        .error { color: red; }
+        input { margin: 5px; padding: 5px; }
+        button { padding: 5px 10px; margin: 5px; }
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+    </style>
     </head>
     <body>
         <div class="form-container">
-            <h2>agergar productos</h2>
+            <h2>Agregar Productos</h2>
             <div id="form-error" class="error"></div>
             <input type="text" id="nombre" placeholder="Nombre" required>
-            <input type="text" id="precio" placeholder="Precio" required>
+            <input type="number" id="precio" placeholder="Precio" required>
             <button onclick="handleAddProduct()">Agregar Productos</button>
+        </div>
+
+        <div class="update-container" id="update-form" style="display: none;">
+            <h2>Actualizar Productos</h2>
+            <div id="update-erro" class="error"></div>
+            <input type="text" id="update-id" readonly>
+            <input type="text" id="update-nombre" placeholder="Nombre" required>
+            <input type="number" id="update-precio" placeholder="Precio" required>
+            <button onclick="handleUpdateProduct()">Actualizar producto</button>
+            <button onclick="cancelarUpdate()">Cancelar</button>
         </div>
 
         <div class="button-container">
@@ -32,7 +51,7 @@
             </thead>
             <tbody id="productos-table-body"></tbody>
         </table>
-        
+
         <script src="./gestion_apis.js"></script>
     </body>
 </html>
