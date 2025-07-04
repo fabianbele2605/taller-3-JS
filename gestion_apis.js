@@ -106,7 +106,7 @@ function cancelarUpdate() {
     document.getElementById('update-error').textContent = '';
 }
 
-// funcion de obtener los productos
+// funcion de obtener los productos disponibles
 
 async function obtenerProductosDisponibles() {
     try {
@@ -123,7 +123,7 @@ async function obtenerProductosDisponibles() {
         productosDisponibles.forEach(producto => {
             const row = document.createElement('tr');
             row.innerHTML = `
-                <td>${producto.id}</td>
+                
                 <td>${producto.nombre}</td>
                 <td>${producto.precio}</td>
                 <td>${producto.venta?'Vendido':'Disponible'}</td>

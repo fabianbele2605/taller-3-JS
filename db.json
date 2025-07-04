@@ -41,21 +41,24 @@
       "id": "6",
       "nombre": "Balon",
       "precio": 100,
-      "is_estado": true
+      "is_estado": true,
+      "venta": true
     },
     {
       "id": "7",
       "nombre": "gkaglñ",
       "precio": 465,
-      "is_estado": true,
-      "venta": true
+      "is_estado": false,
+      "venta": true,
+      "debaja": true
     },
     {
       "id": "8",
       "nombre": "jajaj",
       "precio": 45646,
-      "is_estado": true,
-      "venta": true
+      "is_estado": false,
+      "venta": true,
+      "debaja": true
     }
   ]
 }
